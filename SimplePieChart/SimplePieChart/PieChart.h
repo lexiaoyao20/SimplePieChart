@@ -30,6 +30,7 @@
 - (void)pieChart:(PieChart *)pieChart didSelectSliceAtIndex:(NSUInteger)index;
 - (void)pieChart:(PieChart *)pieChart willDeselectSliceAtIndex:(NSUInteger)index;
 - (void)pieChart:(PieChart *)pieChart didDeselectSliceAtIndex:(NSUInteger)index;
+- (NSString *)pieChart:(PieChart *)pieChart toopTipStringAtIndex:(NSUInteger)index;
 
 @end
 
@@ -50,6 +51,17 @@
     CGFloat                     _selectedSliceOffsetRadius;
     BOOL                        _showPercentage;
     BOOL                        _canSelect;
+    
+    @private
+    NSInteger _selectedSliceIndex;
+    //pie view, contains all slices
+    BackgroundView  *_pieView;
+    
+    //animation control
+    NSTimer *_animationTimer;
+    NSMutableArray *_animations;
+    
+    NSTrackingArea *_trackingArea;
 }
 
 @property (nonatomic,assign) id<PieChartDataSource> dataSource;
@@ -66,7 +78,7 @@
 @property (nonatomic,assign) CGFloat selectedSliceStroke;
 @property (nonatomic,assign) CGFloat selectedSliceOffsetRadius;
 @property (nonatomic,assign,getter = isShowPercentage) BOOL showPercentage;
-@property (nonatomic,assign) BOOL canSelect;                     
+@property (nonatomic,assign) BOOL canSelect;
 
 - (id)initWithFrame:(NSRect)frame Center:(CGPoint)center Radius:(CGFloat)radius;
 - (void)reloadData;

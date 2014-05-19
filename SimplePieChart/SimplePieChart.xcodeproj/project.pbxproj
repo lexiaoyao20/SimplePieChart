@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		938F0C50192987770085E0B6 /* SliceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 938F0C4F192987770085E0B6 /* SliceLayer.m */; };
 		CE0C378D19076E1000027F6B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0C378C19076E1000027F6B /* Cocoa.framework */; };
 		CE0C379719076E1000027F6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE0C379519076E1000027F6B /* InfoPlist.strings */; };
 		CE0C379919076E1000027F6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0C379819076E1000027F6B /* main.m */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		938F0C4E192987770085E0B6 /* SliceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliceLayer.h; sourceTree = "<group>"; };
+		938F0C4F192987770085E0B6 /* SliceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliceLayer.m; sourceTree = "<group>"; };
 		CE0C378819076E1000027F6B /* SimplePieChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplePieChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0C378C19076E1000027F6B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CE0C378F19076E1000027F6B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -170,6 +173,8 @@
 		CE0C37C219076E4B00027F6B /* PieChart */ = {
 			isa = PBXGroup;
 			children = (
+				938F0C4E192987770085E0B6 /* SliceLayer.h */,
+				938F0C4F192987770085E0B6 /* SliceLayer.m */,
 				CE0C37CD1907889000027F6B /* PieChart.h */,
 				CE0C37CE1907889000027F6B /* PieChart.m */,
 				CE0C37C6190786FB00027F6B /* NSColor+CGColor.h */,
@@ -291,6 +296,7 @@
 				CE0C37A019076E1000027F6B /* AppDelegate.m in Sources */,
 				CE0C37C8190786FB00027F6B /* NSColor+CGColor.m in Sources */,
 				CE0C37CF1907889000027F6B /* PieChart.m in Sources */,
+				938F0C50192987770085E0B6 /* SliceLayer.m in Sources */,
 				CE0C37D61907960000027F6B /* BackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,7 +377,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.7;
 			};
 			name = Debug;
 		};
@@ -390,18 +396,20 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.7;
 			};
 			name = Release;
 		};
 		CE0C37BB19076E1100027F6B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimplePieChart/SimplePieChart-Prefix.pch";
 				INFOPLIST_FILE = "SimplePieChart/SimplePieChart-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -409,11 +417,13 @@
 		CE0C37BC19076E1100027F6B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimplePieChart/SimplePieChart-Prefix.pch";
 				INFOPLIST_FILE = "SimplePieChart/SimplePieChart-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -465,6 +475,7 @@
 				CE0C37BC19076E1100027F6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE0C37BD19076E1100027F6B /* Build configuration list for PBXNativeTarget "SimplePieChartTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +484,7 @@
 				CE0C37BF19076E1100027F6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,18 +7,18 @@
 //
 
 #import "BackgroundView.h"
+#import "NSColor+CGColor.h"
 
 @implementation BackgroundView
 
 @synthesize backgroundColor = _backgroundColor;
 @synthesize center = _center;
 
-- (void)drawRect:(NSRect)dirtyRect {
-    NSRect bounds = [self bounds];
-    
-    if (self.backgroundColor) {
-        NSRectFill(bounds);
-    }
+- (void)setBackgroundColor:(NSColor *)backgroundColor {
+    [backgroundColor retain];
+    [_backgroundColor release];
+    _backgroundColor = backgroundColor;
+    self.layer.backgroundColor = _backgroundColor.CGColor;
 }
 
 - (void)dealloc
