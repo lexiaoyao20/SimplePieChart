@@ -21,11 +21,5 @@
     return (CGColorRef)[(id)CGColorCreate(colorSpace, components) autorelease];
 }
 
-+ (NSColor *)colorWithCGColor:(CGColorRef)CGColor
-{
-    if (CGColor == NULL) return nil;
-    return [NSColor colorWithCIColor:[CIColor colorWithCGColor:CGColor]];
-}
-
 @end
 
