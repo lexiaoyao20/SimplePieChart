@@ -159,7 +159,7 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
     _showPercentage = showPercentage;
     for(SliceLayer *layer in _pieView.layer.sublayers)
     {
-        CATextLayer *textLayer = [[layer sublayers] objectAtIndex:0];
+        CATextLayer *textLayer = (CATextLayer *)[[layer sublayers] objectAtIndex:0];
         [textLayer setHidden:!_showText];
         if(!_showText) return;
         
@@ -335,7 +335,7 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
             [layer setFillColor:[self backgroundColor].CGColor];
             [layer setDelegate:nil];
             [layer setZPosition:0];
-            CATextLayer *textLayer = [[layer sublayers] objectAtIndex:0];
+            CATextLayer *textLayer = (CATextLayer *)[[layer sublayers] objectAtIndex:0];
             [textLayer setHidden:YES];
         }
         
@@ -449,7 +449,7 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
             }
         }
     }else if (newSelection != -1){
-        SliceLayer *layer = [_pieView.layer.sublayers objectAtIndex:newSelection];
+        SliceLayer *layer = (SliceLayer *)[_pieView.layer.sublayers objectAtIndex:newSelection];
         if(_selectedSliceOffsetRadius > 0 && layer){
             if (layer.isSelected) {
                 if ([_delegate respondsToSelector:@selector(pieChart:willDeselectSliceAtIndex:)])
@@ -476,7 +476,7 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
 {
     if(_selectedSliceOffsetRadius <= 0)
         return;
-    SliceLayer *layer = [_pieView.layer.sublayers objectAtIndex:index];
+    SliceLayer *layer = (SliceLayer *)[_pieView.layer.sublayers objectAtIndex:index];
     if (layer && !layer.isSelected) {
         CGPoint currPos = layer.position;
         double middleAngle = (layer.startAngle + layer.endAngle)/2.0;
@@ -490,7 +490,7 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
 {
     if(_selectedSliceOffsetRadius <= 0)
         return;
-    SliceLayer *layer = [_pieView.layer.sublayers objectAtIndex:index];
+    SliceLayer *layer = (SliceLayer *)[_pieView.layer.sublayers objectAtIndex:index];
     if (layer && layer.isSelected) {
         layer.position = CGPointMake(0, 0);
         layer.selected = NO;
@@ -534,7 +534,7 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
 
 - (void)updateLabelForLayer:(SliceLayer *)pieLayer value:(CGFloat)value
 {
-    CATextLayer *textLayer = [[pieLayer sublayers] objectAtIndex:0];
+    CATextLayer *textLayer = (CATextLayer *)[[pieLayer sublayers] objectAtIndex:0];
     [textLayer setHidden:!_showText];
     if(!_showText) return;
     NSString *label;
