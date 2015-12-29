@@ -85,7 +85,6 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
 - (void)destoryTrackingArea {
     if (_trackingArea) {
         [self removeTrackingArea:_trackingArea];
-        [_trackingArea release]; _trackingArea = nil;
     }
 }
 
@@ -553,7 +552,7 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
     else
     {
         [textLayer setString:label];
-        [textLayer setFont:self.textFont];
+        [textLayer setFont:(__bridge CFTypeRef _Nullable)(self.textFont)];
         [textLayer setBounds:CGRectMake(0, 0, size.width, size.height)];
     }
     [CATransaction setDisableActions:NO];

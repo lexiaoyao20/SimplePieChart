@@ -13,7 +13,7 @@
     CGPoint _center;
 }
 
-@property (nonatomic,retain) NSColor *backgroundColor;
+@property (nonatomic,strong) NSColor *backgroundColor;
 @property (nonatomic,assign) CGPoint center;
 
 @end

@@ -15,16 +15,9 @@
 @synthesize center = _center;
 
 - (void)setBackgroundColor:(NSColor *)backgroundColor {
-    [backgroundColor retain];
-    [_backgroundColor release];
     _backgroundColor = backgroundColor;
     self.layer.backgroundColor = _backgroundColor.CGColor;
 }
 
-- (void)dealloc
-{
-    [_backgroundColor release];
-    [super dealloc];
-}
 
 @end

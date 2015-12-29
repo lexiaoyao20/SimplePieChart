@@ -16,13 +16,6 @@
 @synthesize slices = _slices;
 @synthesize sliceColors = _sliceColors;
 
-- (void)dealloc
-{
-    [_slices release];
-    [_sliceColors release];
-    [super dealloc];
-}
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     self.slices = [NSMutableArray array];

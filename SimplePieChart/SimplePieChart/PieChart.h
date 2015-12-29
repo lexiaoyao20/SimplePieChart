@@ -35,8 +35,6 @@
 @end
 
 @interface PieChart : BackgroundView {
-    id<PieChartDataSource>      _dataSource;
-    id<PieChartDelegate>        _delegate;
     
     CGFloat                     _startPieAngle;
     CGFloat                     _animationSpeed;
@@ -64,8 +62,8 @@
     NSTrackingArea *_trackingArea;
 }
 
-@property (nonatomic,assign) id<PieChartDataSource> dataSource;
-@property (nonatomic,assign) id<PieChartDelegate> delegate;
+@property (nonatomic,weak) id<PieChartDataSource> dataSource;
+@property (nonatomic,weak) id<PieChartDelegate> delegate;
 @property (nonatomic,assign) CGFloat startPieAngle;
 @property (nonatomic,assign) CGFloat animationSpeed;
 @property (nonatomic,assign) CGPoint pieCenter;                 

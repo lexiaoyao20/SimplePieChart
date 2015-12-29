@@ -57,10 +57,5 @@
     [self setValue:to forKey:key];
 }
 
-- (void)dealloc
-{
-    [_text release];
-    [super dealloc];
-}
 
 @end

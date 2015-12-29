@@ -18,7 +18,7 @@
     
     [self getComponents:(CGFloat *)&components];
     
-    return (CGColorRef)[(id)CGColorCreate(colorSpace, components) autorelease];
+    return (__bridge CGColorRef)((id)CFBridgingRelease(CGColorCreate(colorSpace, components)));
 }
 
 @end
